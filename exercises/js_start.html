@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Demo / Exercise</title>
+	</head>
+	<body>
+		<style type="text/css">
+			.zippy {
+				border: 1px solid #000;
+				margin: 10px;
+			}
+			.zippy h2 {
+				margin: 0;
+				padding: 5px 0 2px 0;
+        padding-left: 28px;
+				min-height: 25px;
+			}
+			.zippy.expanded h2 {
+				background-image: url("minus.png");
+        background-position: left center;
+        background-repeat: no-repeat;
+			}
+			.zippy.collapsed h2 {
+        background-image: url("plus.png");
+        background-position: left center;
+        background-repeat: no-repeat;
+			}
+      .zippy.collapsed ul {
+        display: none;
+      }
+			.zippy ul {
+        border-top: 1px solid #000;
+				margin: 0;
+				padding-bottom: 5px;
+			}
+		</style>
+		
+    <div class="zippy">
+      <h2>Gadgets</h2>
+      <ul>
+        <li>The Awesome</li>
+        <li>The Master</li>
+        <li>The Pacifier</li>
+      </ul>
+    </div>
+		
+		<div class="zippy collapsed">
+			<h2>Widgets</h2>
+			<ul>
+				<li>UX-1</li>
+        <li>ZW-2</li>
+				<li>TR-5</li>
+			</ul>
+		</div>
+		
+    <div class="zippy expanded">
+      <h2>Accessories</h2>
+      <ul>
+        <li>Backpack</li>
+        <li>Suitcase</li>
+        <li>Nylon bag</li>
+      </ul>
+    </div>
+
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

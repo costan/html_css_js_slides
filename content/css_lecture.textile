@@ -249,7 +249,7 @@ h1. The Cascade: How It Works
 
 Declarations have the following priority:
 
-# @style@ attributes always win.
+# Declarations in @style@ attributes always win.
 # Browser declarations marked @!important@, ordered by specificity.
 # Page declarations marked @!important@, ordered by specificity.
 # Page declarations not marked @!important@, ordered by specificity.
@@ -292,3 +292,201 @@ Specificities are ordered lexicographically:
 * 0, 1, 0 is more specific than 0, 0, 99
 * 2, 0, 0 is more specific than 1, 99, 99
 * 2, 1, 2 is more specific than 2, 0, 2
+
+h1. CSS Declarations
+
+Declarations cover these major areas
+# Color
+# Size
+# Font
+# Position
+
+h1. CSS Colors: Properties
+
+* @color@ - the foreground color (text, list bullets)
+* @background-color@
+* @border-color@
+
+h1. CSS Colors: RGB Color Model
+
+* Components: red, green, blue
+* Additive: red + green + blue = white
+* NOT Subtractive: in painting, red + yellow + blue = black
+
+h1. CSS Colors: RGB Color Wheel
+
+<div style="text-align: center;">
+!{width:50%;}images/rgb_colorwheel.svg!
+</div>
+
+h1. CSS Colors: Values
+
+* Keywords for a few colors:
+
+:inlinecode[lang=css]
+p { color: red; }
+:endinlinecode
+
+* RGB notation:
+
+:inlinecode[lang=css]
+p { color: rgb(255, 0, 0); }
+:endinlinecode
+
+* Hex-RGB notation:
+
+:inlinecode[lang=css]
+p { color: #FF0000; }
+:endinlinecode
+
+h1. CSS Dimensions: Properties
+
+* @width@, @height@, @min-height@, @max-height@, @min-width@, @max-width@ - the size of an element's box
+* @font-size@, @text-indent@, @line-height@ - typography
+* @border-width@, @padding@, @margin@ - layout stuff
+* @top@, @right@, @bottom@, @left@ - more layout stuff
+
+h1. CSS Dimensions: Values
+
+:inlinecode[lang=css]
+p {
+  border-width: 2px;
+  font-size: 12pt;
+  width: 80%;
+  min-height: 8em;
+  margin: 1cm;
+}
+:endinlinecode
+
+* Size values have a number and a unit of measurement.
+* Only 0 does not nead a unit of measurement.
+
+h1. CSS Dimensions: Absolute Units
+
+* @px@ - pixels; defined by the screen's resolution
+* @cm@, @mm@, @in@ - physical units, size changes with screen resolution
+* @pt@ - points; usually used for fonts; 1 pt = 1/72 in
+
+The absolute units don't need a context to be interpreted.
+
+h1. CSS Dimensions: Relative Units
+
+* @%@ - percentage of some other size
+* @em@ - the @font-size@ of the parent element
+
+For @%@, the size is usually the same size in the parent element.
+
+* @width@, @min-width@, @max-width@ refer to the @width@ of the parent element.
+* @font-size@ refers to the @font-size@ of the parent element.
+
+h1. CSS Typography: Serif vs. Sans Serif Fonts
+
+* Serif font vs sans-serif font
+
+<div style="text-align: center;">
+!{width:40%;}images/serif_vs_sans_serif_s.svg! <span style="display:inline-block; width:10%;">&nbsp;</span> !{width:40%;}images/serif_vs_sans_serif_ss.svg!
+</div>
+
+* Serif font with red serifs
+
+<div style="text-align: center;">
+!{width:50%;}images/serif_vs_sans_serif_rs.svg!
+</div>
+
+h1. CSS Typography: Monospaced Fonts
+
+* The difference between monospaced fonts and proportional fonts.
+
+<div style="text-align: center;">
+!{width:50%;}images/proportional_vs_monospaced.svg!
+</div>
+
+* Proportional fonts are easier to read, and are used in most places.
+* Monospaced fonts make it easy to line up text vertically. Useful for: coding, representing tables (e.g. receipts, accounting stuff), retro looks.
+
+h1. CSS Fonts: Font Families
+
+Generic families: %{font-family: serif;}serif%, %{font-family: sans-serif;}sans-serif%, %{font-family: monospace;}monospace%, %{font-family: cursive;}cursive%, %{font-family: fantasy;}fantasy%
+
+Fonts available on most computers:
+
+| %{font-family: serif;}serif% | %{font-family: sans-serif;}sans-serif% | %{font-family: monospace;}monospace% |
+| <span style="font-family: Garamond;">Garamond</span> | <span style="font-family: Georgia;">Georgia</span> | <span style="font-family: Courier New;">Courier New</span> |
+| <span style="font-family: Times New Roman;">Times New Roman</span> | <span style="font-family: Helvetica;">Helvetica</span> | |
+| | <span style="font-family: Tahoma;">Tahoma</span> | |
+| | <span style="font-family: Tahoma;">Verdana</span> | |
+
+h1. CSS Typography: Choosing a Font
+
+:inlinecode[lang=css]
+p {
+  font-family: Myriad Pro, Verdana, Tahoma, sans-serif;
+}
+:endinlinecode
+
+* The browser looks for each font, in the specified order. Once a font is found, that font is used.
+* Always use a generic font family as the last fall-back option.
+
+h1. CSS Typography: Downloadable Fonts
+
+:inlinecode[lang=css]
+@font-face {
+  font-family: Myriad Pro;
+  src: url("fonts/Myriad_Pro.otf") format("otf");
+}
+:endinlinecode
+
+* SVG fonts: supported by all recent browsers.
+* OTF fonts: supported by Firefox, Chrome, Safari.
+* WOFF fonts: supported by IE, Firefox 3.6+
+
+h1. CSS Typography: Font Styles
+
+* A single font-family can have many styles of glyphs.
+* Well-known styles: bold, italic, and underline.
+* CSS properties: @font-style@, @font-variant@, @text-decoration@
+
+| @font-style@ | @font-variant@ | @text-decoration@ |
+| %{font-style:italic;}italic% | %{font-variant:small-caps}small-caps% | %{text-decoration:underline}underline% |
+| %{font-style:oblique;}oblique% | %{font-variant:normal}normal% | %{text-decoration:overline}overline% |
+| %{font-style:normal}normal% | | %{text-decoration:line-through}line-through% |
+| | | %{text-decoration:none}none% |
+
+h1. CSS Typography: Font Weights
+
+%{font-weight:ligther;}100 - lighter%
+%{font-weight:normal;}400 - normal%
+%{font-weight:bold;}700 - bold%
+%{font-weight:bolder;}800 - bolder%
+
+h1. CSS Typography: The Em Box
+
+* Each font glyph is designed inside a square box, called the em box.
+
+<div style="text-align: center;">
+!{width:50%;}images/the_em_box.svg!
+</div>
+
+* @font-face@ sets the size of the em box.
+* @1 em@ is the size of the current font's em box, not the size of capital M.
+
+h1. CSS Typography: Important Lines
+
+<div style="text-align: center;">
+!{width:90%;}images/typography_line_terms.svg!
+</div>
+
+* The median line is used for @line-height@, discussed next.
+
+h1. CSS Typography: Line Height
+
+:inlinecode[lang=css]
+p {
+  font-size: 12pt;
+  line-height: 2em;
+}
+:endinlinecode
+
+* The rule above is equivalent to double spacing in word processors.
+* @line-height@ > @font-size@: the difference is divided by two, added to the top and bottom of the em boxes
+* @line-height@ < @font-size@: @line-height@ is divided by two, the halves go above and below the font's median line

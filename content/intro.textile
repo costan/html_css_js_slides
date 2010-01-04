@@ -30,18 +30,17 @@ h1. Keep It -Simple- +Separated+
 * Decrease latency
 * Decrease hosting costs
 
-h1. The Evolution of the Web
+h1. The Evolution of Web Documents
 
-| 1997 | 2000 | 2005 |
-| html | css  | js   |
-| css  | css  | js   |
-| js   | css  | js   |
-| html | html | html |
-| css  | js   | html |
-| js   | html | html |
-| html | js   | css  |
-| css  | html | css  |
-| js   | js   | css  |
+|1997: | %{color: blue;}html% ||2000: | %{color: green;}css% ||2005: | %{color: red;}js%    |
+|      | %{color: green;}css% ||      | %{color: green;}css% ||      | %{color: red;}js%    |
+|      | %{color: red;}js%    ||      | %{color: green;}css% ||      | %{color: red;}js%    |
+|      | %{color: blue;}html% ||      | %{color: blue;}html% ||      | %{color: green;}css% |
+|      | %{color: green;}css% ||      | %{color: red;}js%    ||      | %{color: green;}css% |
+|      | %{color: red;}js%    ||      | %{color: blue;}html% ||      | %{color: green;}css% |
+|      | %{color: blue;}html% ||      | %{color: red;}js%    ||      | %{color: blue;}html% |
+|      | %{color: green;}css% ||      | %{color: blue;}html% ||      | %{color: blue;}html% |
+|      | %{color: red;}js%    ||      | %{color: red;}js%    ||      | %{color: blue;}html% |
 
 h1. The Browser Wars
 

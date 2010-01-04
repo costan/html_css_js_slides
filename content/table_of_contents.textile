@@ -13,6 +13,7 @@ h1. HTML
 h1. CSS
 
 * "CSS Is For Presentation":css_lecture.html
+* "CSS Layout":css_lecture_layout.html
 * "CSS Demonstration":css_demo.html
 * "CSS Practice":css_exercise.html
 

@@ -1,0 +1,156 @@
+h1. CSS Layout
+
+h1. CSS Layout: The Box Model
+
+* Each element is a box.
+* Default width: maximum that fits into the parent element.
+* Default height: minimum that fits in all the children elements.
+* Layout is done by putting rectangular boxes together.
+
+h1. CSS Layout: The Box Model
+<div style="text-align: center;">
+!{width:90%;}images/css_box_model.svg!
+</div>
+
+h1. CSS Layout: Padding
+
+:inlinecode[lang=css]
+h1 {
+  padding-top: 20px;
+  padding-right: 0;
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+
+/* Same as above, using shorthand. */
+h2 { padding: 20px 0 40px 10px; } 
+
+/* 5px top and bottom, 10px left and right. */
+h3 { padding: 5px 10px; }
+
+/* 0 padding all around. */
+p { padding: 0; }
+:endinlinecode
+
+h1. CSS Layout: Margins
+
+* Works exactly like padding.
+
+* Shorthand review: @top@, @right@, @bottom@, @left@
+* Shorthand mnemonic: like the clock - 12, 3, 6, 9
+
+h1. CSS Layout: Borders I
+
+The following properties need to be set:
+* @border-width@ - the thickness of the border (a CSS size)
+* @border-style@ - %{border: 5px solid;}solid%, %{border: 5px dashed;}dashed%, %{border: 5px dotted;}dotted%, %{border: 10px inset;}inset%, %{border: 10px outset;}outset%, %{border: 10px groove;}groove%
+
+@border-color@ is optional, defaults to the foreground color.
+
+:inlinecode[lang=css]
+h1 {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+/* Same as above, using shorthand. */
+p { border: 2px solid black; }
+:endinlinecode
+
+h1. CSS Layout: Borders II
+
+Each of the border's sides can be set individually using both normal properties and short-hand.
+
+:inlinecode[lang=css]
+h1 {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: black;
+  border-right: 2px solid black;
+}
+:endinlinecode
+ 
+
+h1. CSS Layout: Inline Elements
+
+Inline elements can share a line. Examples: @<em>@, @<strong>@, @<input>@, @<select>@, @<img>@.
+
+<notextile>
+<div>
+<em style="border:1px solid blue;">emphasized element</em>
+<strong style="border:1px solid blue;">strongly emphasized element</strong>
+<em style="border:1px solid blue;">another emphasized element</em>
+<strong style="border:1px solid blue;">another strongly emphasized element</strong>
+<em style="border:1px solid blue;">yet another emphasized element</em>
+</div>
+</notextile>
+
+h1. CSS Layout: Block Elements
+
+Block elements take the entire line for themselves. Examples: @<p>@, @<ul>@, @<ol>@, @<li>@, @<h1>@ - @<h6>@.
+
+<div>
+<p style="border:1px solid blue;">A paragraph.</p>
+<ol style="border:1px solid blue;">
+  <li style="border:1px solid blue; list-style: none;">A list item</li>
+  <li style="border:1px solid blue; list-style: none;">Another list item</li>
+</ol>
+<p style="border:1px solid blue;">Another paragraph.</p>
+
+h1. CSS Layout: Flow Rules
+
+* Block elements can contain exclusively block elements, or exclusively inline elements.
+* Inline elements can only contain other inline elements.
+
+h1. CSS Layout: The Flow
+
+Unless specified otherwise, HTML elements are laid out according to the flow.
+
+* Inline elements are laid out horizontally adjacent to each other, left-to-right.
+* Inline elements have no margins or padding.
+* Block elements are laid out vertically adjacent to each other, top-to-bottom.
+* Adjacent block elements have their margins collapsed.
+
+h1. Meaningless HTML Elements
+
+* @<div>@ and @<span>@ have no intrinsic meaning. They exist solely as hooks for CSS and JavaScript.
+* @<div>@ is a block element.
+* @<span>@ is an inline element.
+* Each @<div>@ or @<span>@ _should_ have a @class@ or @id@ attribute.
+* Beware of _divitis_ (using @<div>@ tags instead of tags with semantic meaning).
+
+h1. Good use of divs.
+
+:inlinecode[lang=html]
+<body>
+  <div id="intro">
+    <p>The thesis of this essay is...</p>
+  </div>
+  <div id="contents">
+    <p>The first supporting point is...</p>
+    <p>The second supporting point is...</p>
+    <p>The third supporting point is...</p>
+  </div>
+  <div id="conclusion">
+    <p>In conclusion, ...</p>
+  </div>
+</body>
+:endinlinecode
+
+The divs convey semantic information that is not reflected by the collection of paragraphs.
+
+h1. CSS Layout: Positioning
+
+* Position an element by setting @position@ to something other than @static@.
+* Use @left@, @right@, @top@ and @bottom@ to change the default position.
+
+
+| @position@ | In flow | Positioning                   |
+| @static@   | yes     | according to the flow         |
+| @relative@ | ghost   | relative to the flow position |
+| @absolute@ | no      | document coordinate space     |
+| @fixed@    | no      | screen coordinate space       |
+
+h1. CSS Layout: Floats
+

@@ -315,3 +315,14 @@ h1. HTML: Forms II
 h1. HTML: Forms II Rendering
 
 :include code/html/forms2.html
+
+h1. HTML: More Tags
+
+Which tags are semantic (good), and which tags are purely for presentation (bad, forbidden, and deprecated).
+
+| @<b>@     | @<big>@     | @<blockquote>@ |
+| @<blink>@ | @<br>@      | @<center>@     |
+| @<cite>@  | @<del>@     | @<ins>@        |
+| @<i>@     | @<marquee>@ | @<pre>@        |
+| @<q>@     | @<small>@   | @<sub>@        |
+| @<sup>@   | @<tt>@      | @<u>@          |

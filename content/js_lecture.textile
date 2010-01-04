@@ -1,0 +1,34 @@
+h1. JavaScript: the Web's Programming Language
+
+h1. Adding JavaScript: Horrible
+
+:inlinecode[lang=html]
+<a href="javascript:alert('Lame script!');"/>Click me</a>
+
+<form action="#">
+  <input type="submit" onclick="alert('Lame script!');"
+         value="Click me">
+</form>
+:endinlinecode
+
+Forget you saw this.
+
+h1. Adding JavaScript: Bad
+
+:inlinecode[lang=html]
+<script type="text/javascript">
+alert("I'm alive!");
+</script>
+:endinlinecode
+
+@<script>@ tags can be added in @<head>@ or @<body>@. There is a subtle difference that we'll discuss later.
+
+h1. Adding JavaScript: Good
+
+:code code/js/include_good.html[lang=html]
+
+:code code/js/alert.js[lang=js]
+
+h1. JavaScript is a Programming Language
+
+h1. 

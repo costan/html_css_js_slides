@@ -1,0 +1,294 @@
+h1. CSS: Cascading Style Sheets
+
+h1. CSS is for Presentation
+
+Change %{color: red;}color%, %{font-size: 2em;}size%, %{font-family: monospace;}font%, and <span style="display: inline-block; position: relative; left: 20%; top: 4em;">position</div>
+
+h1. Adding CSS: Very Bad
+
+:inlinecode[lang=html]
+<p style="color: red;"/>This is a red paragraph.</a>
+:endinlinecode
+
+* Used for debugging or quick experimentation.
+* Bad: mixes presentation with markup.
+* Bad: instructions here cannot be overridden by external files.
+
+h1. Adding CSS: Somewhat Bad
+
+:inlinecode[lang=html]
+<style type="text/css">
+  p { color: red; }
+</style>
+<p>This is a red paragraph.</p>
+:endinlinecode
+
+* @<style>@ tags are allowed in @<head>@ and @<body>@.
+* Bad: presentation embedded in markup.
+* Only _one_ good reason to use this: your resume in a self-contained file.
+
+h1. Adding CSS: Good
+
+:code code/css/include_good.html[lang=html]
+
+:code code/css/red.css[lang=css]
+
+@<link>@ tags are only allowed in @<head>@.
+
+h1. Adding CSS: If You Can't Access @<head>@
+
+:code code/css/include_no_head.html[lang=html]
+
+h1. What CSS Looks Like
+
+:code code/css/sample.css[lang=css]
+
+* A CSS file is a sequence of rules.
+
+h1. CSS Anatomy: Rules, Selectors, Declarations
+
+:inlinecode[lang=css]
+h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  line-height: 1.2em;
+}
+:endinlinecode
+
+
+|        | Selector | Declarations |
+| Rule 1 | @h1@     | @color: red;@  |
+| Rule 2 | @p em@   | @font-size: 12pt; line-height: 1.2em;@  |
+
+The selector comes first, then the declarations are enclosed by brackets.
+
+h1. CSS Anatomy: Properties and Values
+
+:inlinecode[lang=css]
+h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:endinlinecode
+
+| Property      | Value                          |
+| @color@       | @red@                          |
+| @font-size@   | @12pt@                         |
+| @line-height@ | @Arial, Helvetica, sans-serif@ |
+
+Each declaration in a rule specifies a value for a property.
+
+h1. CSS Anatomy: Directives
+
+:inlinecode[lang=css]
+@include url("code/css/red.css");
+
+@font-face {
+  font-family: Myriad Pro;
+  src: url("fonts/Myriad_Pro.otf");
+} 
+:endinlinecode
+
+* Directives start with <code>@</code>.
+* Presentation information that doesn't fall under the selector/declaration model.
+
+h1. CSS Selectors: Primitives
+
+* All @p@ elements.
+
+:inlinecode[lang=css]
+p { color: red; }
+:endinlinecode
+
+* The element with @id="summary"@.
+
+:inlinecode[lang=css]
+#summary { color: blue; }
+:endinlinecode
+
+* All elements whose @class@ attribute contains @highlight@.
+
+:inlinecode[lang=css]
+.highlight { color: red; }
+:endinlinecode
+
+h1. CSS Selectors: Classes
+
+:inlinecode[lang=css]
+.small { font-size: 10pt; }
+.highlight { color: red; }
+:endinlinecode
+
+:inlinecode[lang=html]
+<p class="highlight">This is highlighted.</p>
+<p class="highlight small">This is small and highlighted.</p>
+<p class="small">This is small.</p>
+:endinlinecode
+
+The @class@ attribute can contain multiple class names, separated by spaces.
+
+h1. CSS Selectors: Compositions
+
+* AND: concatenate selectors
+
+:inlinecode[lang=css]
+/* <p> elements whose class contains highlight and small */
+p.highlight.small { color: red; }
+:endinlinecode
+
+* OR: separate by @,@
+
+:inlinecode[lang=css]
+/* <h1> <h2> and <h3> elements */
+h1, h2, h3 { color: red; }
+:endinlinecode
+
+* Descendant of: separate by space
+
+:inlinecode[lang=css]
+/* <p> elements inside <form> elements */
+form p { color: blue; }
+:endinlinecode
+
+h1. CSS Selectors: Advanced Compositions
+
+* Child of: separate by @>@
+
+:inlinecode[lang=css]
+/* <p> elements who are direct children of <form> elements */
+form > p { color: blue; }
+:endinlinecode
+
+* Immediately after (next sibling): separate by @+@
+
+:inlinecode[lang=css]
+/* <p> elements coming right after <ul> elements */
+ul + p { color: gray; }
+:endinlinecode
+
+* Immediately after (sibling): separate by @~@
+
+:inlinecode[lang=css]
+/* <p> elements whose parents have <ul> children, and
+   who come after the <ul> children in the document */
+ul ~ p { color: gray; }
+:endinlinecode
+
+h1. CSS Selectors: Pseudo-Classes
+
+| @:hover@   | The user's mouse is over the element                           |
+| @:focus@   | The control has the input focus                                |
+| @:active@  | The user is about to activate the element (e.g. follow a link) |
+| @:link@    | The element is a link that the user has not visited            |
+| @:visited@ | The element is a link that the user has visited                |
+
+h1. CSS Selectors: Pseudo-Class Example
+
+:inlinecode[lang=css]
+a:link { color: blue; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: black; }
+:endinlinecode
+
+What does this do?
+*(incremental) Unvisited links are blue. Visited links are gray.
+*(incremental) When the user's mouse hovers over a link, it turns red.
+*(incremental) When the user clicks on a link, it becomes black.
+
+h1. CSS Selectors: Advanced Pseudo-Classes
+
+| @:first@ | The first child (e.g. the first paragraph in the body) |
+| @:last@  | The last child |
+| @:nth-child(even)@ | All even children (2nd, 4th, ...) |
+| @:nth-child(2n)@ | All even children (2nd, 4th, ...) |
+| @:nth-child(odd)@ | All odd children |
+| @:nth-child(2n+1)@ | All odd children |
+
+Very useful for improving readability by alternating font colors in lists and tables.
+
+h1. CSS Selectors: the Selectoracle
+
+:inlinecode[lang=css]
+ul#master-index > li:nth-child(even).small p.highlighted.twisted.legal a:hover
+:endinlinecode
+
+<div class="incremental">
+A hovered link inside
+a paragraph (@<p>@) with classes @highlighted@ and @twisted@ inside
+a list item (@<li>@) with class @small@ which is an even child of
+an unordered list (@<ul>@) with @id="master-index"@ 
+</div>
+
+h1. The Cascade: The C in CSS
+
+:inlinecode[lang=css]
+p { color: red; }
+p { color: blue; }
+:endinlinecode
+:inlinecode[lang=html]
+<p>What color is this paragraph?</p>
+:endinlinecode
+
+*(incremental) The paragraph is blue, so the last declaration wins.
+
+:inlinecode[lang=css]
+p.highlight { color: red; }
+p { color: blue; }
+:endinlinecode
+:inlinecode[lang=html]
+<p class="highlight">What color is this paragraph?</p>
+:endinlinecode
+
+*(incremental) The paragraph is red, because the first declaration is more specific.
+
+h1. The Cascade: How It Works
+
+Declarations have the following priority:
+
+# @style@ attributes always win.
+# Browser declarations marked @!important@, ordered by specificity.
+# Page declarations marked @!important@, ordered by specificity.
+# Page declarations not marked @!important@, ordered by specificity.
+# Browser declarations not marked @!important@, ordered by specificity.
+
+h1. The Cascade: Specificity Point System
+
+A declaration's specifity is determined by its selector.
+
+To compute a selector's specificity:
+# Write the number of IDs in the selector
+# Write the number of classes and pseudo-classes in the selector
+# Write the number of elements in the selector
+
+h1. The Cascade: Specificity Examples
+
+:inlinecode[lang=css]
+p#header { color: red; }
+:endinlinecode
+
+*(incremental) Specificity: 1, 0, 1
+
+:inlinecode[lang=css]
+p li.highlight { color: red; }
+:endinlinecode
+
+*(incremental) Specificity: 0, 1, 2
+
+:inlinecode[lang=css]
+#header p.small a:hover { color: red; }
+:endinlinecode
+
+*(incremental) Specificity: 1, 2, 2
+
+h1. The Cascade: Ordering Specificities
+
+Specificities are ordered lexicographically:
+
+* 0, 0, 2 is more specific than 0, 0, 1
+* 0, 1, 0 is more specific than 0, 0, 99
+* 2, 0, 0 is more specific than 1, 99, 99
+* 2, 1, 2 is more specific than 2, 0, 2

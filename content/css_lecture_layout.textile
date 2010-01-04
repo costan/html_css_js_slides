@@ -154,3 +154,37 @@ h1. CSS Layout: Positioning
 
 h1. CSS Layout: Floats
 
+:inlinecode[lang=css]
+p:first { float: right; }
+:endinlinecode
+
+<notextile>
+<p style="float: right; border: 1px solid black; width: 30%; margin-bottom: 0;">
+The text in this paragraph is floated to the right. The text in this paragraph is floated to the right.
+</p>
+<p>
+This is a normal paragraph. It will flow around the float.  This is a normal paragraph. It will flow around the float. This is a normal paragraph. It will flow around the float.
+</p>
+<p>
+This is another normal paragraph. It will flow around the float.  This is another normal paragraph. It will flow around the float. This is another normal paragraph. It will flow around the float.
+</p>
+</notextile>
+
+h1. CSS Layout: Floats and Clears
+
+:inlinecode[lang=css]
+p:first { float: right; }
+p:last { clear: both; }
+:endinlinecode
+
+<notextile>
+<p style="float: right; border: 1px solid black; width: 30%; margin-bottom: 0;">
+The text in this paragraph is floated to the right. The text in this paragraph is floated to the right.
+</p>
+<p>
+This is a normal paragraph. It will flow around the float.  This is a normal paragraph. It will flow around the float. This is a normal paragraph. It will flow around the float.
+</p>
+<p style="clear: both;">
+This is a cleared paragraph. It will not flow around the float.  This is a cleared paragraph. It will not flow around the float. This is a cleared paragraph. It will not flow around the float.
+</p>
+</notextile>

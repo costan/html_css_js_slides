@@ -31,4 +31,10 @@ h1. Adding JavaScript: Good
 
 h1. JavaScript is a Programming Language
 
-h1. 
+* Dynamic typing
+* Mostly static scoping
+* Supports closures
+* Object-oriented
+* Prototypical inheritance (no classes)
+
+h1. Let's Roll

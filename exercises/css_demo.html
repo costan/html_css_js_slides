@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Demo</title>
+	</head>
+	<body>
+		<style type="text/css">
+      #wrapper { border: 3px solid blue; }
+			.box {
+				width: 150px;
+				height: 150px;
+				border: 3px solid black;
+				margin: 20px;
+				font-size: 48px;
+				font-weight: bold;
+			}
+			.box.red {
+				background-color: #FF6666;
+			}
+      .box.yellow {
+        background-color: yellow;
+      }
+      .box.blue {
+        background-color: #6666FF;
+      }
+		</style>
+		
+		<div id="wrapper">
+			<div class="box red">1</div>
+			<div class="box yellow">2</div>
+			<div class="box blue">3</div>
+		</div>
+		<p>Some text after the boxes.</p>
+		
+		<style type="text/css">
+			/* Uncomment the declarations below one at a time. */
+		  
+		  /*
+		  #wrapper .yellow { display: inline; }
+			.box { display: inline; }
+			.box { display: block; }
+			#wrapper .box { display: block; }
+			.yellow { margin: 0; }
+			.yellow { margin: 20px; }
+			.yellow { padding: 20px; }
+			.yellow { border-style: dashed; }
+			.yellow { position: relative; }
+			.yellow { left: 40px; }
+			.yellow { top: 40px; }
+      .yellow { left: auto; }
+			.yellow { top: auto; }
+			.yellow { position: static; }
+			.yellow { position: absolute; }
+      .yellow { left: 40px; }
+			.yellow { top: 40px; }
+			.yellow { right: 40px; }
+			.yellow { bottom: 40px; }
+			.yellow { left: auto; }
+			.yellow { top: auto; }
+			.yellow { position: fixed; }
+			.yellow { position: static; }
+      .box { float: left; }
+			p { clear: both; }
+			p { clear: none; }
+			#wrapper { overflow: hidden; }
+			#wrapper { overflow: visible; }
+			.box { float: none; }			
+			.yellow { float: left; }
+			*/
+		</style>
+	</body>
+</html>

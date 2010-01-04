@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACME Inc.</title>
+</head>
+<body>
+  <style type="text/css">
+    /* Write your CSS here. */
+		body {
+		  margin: 0;
+		  padding: 0;
+		}
+		#navigation {
+		  height: 1.7em;
+		  border-bottom: 1px solid #888888;
+		  margin-bottom: 5px;
+		}
+		#navigation a {
+		  color: inherit;
+		  text-decoration: none;
+		}
+		#navigation ul {
+		  padding: 0;
+		  margin: 0;
+			padding-left: 0;
+		}
+		#navigation li {
+		  float: left;
+		  list-style: none;
+			background-color: white;
+		}
+		#navigation a {
+		  display: inline-block;
+		  padding: 0.2em 5px;
+		  height: 1.3em;  
+		}
+		#navigation a:hover {
+		  background-color: #E8E8E8;
+		}
+		#navigation li ul {
+		  border: 1px solid #888888;
+		  border-top: 0px none;
+		}
+		#navigation li li {
+		  float: none;
+		  padding: 0;
+		  display: none;
+		}
+		#navigation li li a {
+		  width: 12em;
+		}
+		#navigation li:hover li {
+		  display: block;
+		}    
+  </style>
+  
+  <div id="navigation">   
+    <ul>
+      <li>
+        <a href="home.html">Home</a>
+      </li>
+      <li>
+        <a href="history.html">Company History</a>
+      </li>
+      <li>
+        <a href="partners.html">Partners</a>
+      </li>
+      <li>
+        <a href="#">Departments</a>
+        <ul>
+          <li>
+            <a href="ceo.html">CEO</a>
+          </li>
+          <li>
+            <a href="marketing.html">Marketing</a>
+          </li>
+          <li>
+            <a href="pm.html">Product Management</a>
+          </li>
+          <li>
+            <a href="manufacturing.html">Manufacturing</a>
+          </li>       
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

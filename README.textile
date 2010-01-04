@@ -1,0 +1,21 @@
+h1. HTML, CSS and JavaScript Slides
+
+This is the source code for a slide deck used in a 4-hour course on HTML, CSS, and JavaScript.
+
+h2. Build Instructions
+
+h3. Prerequisites
+
+You will need Ruby, Rake and the <code>codex</code> Ruby gem to build this deck.
+
+h3. Building the Deck
+
+Issue the following command in the presentation's root directory. The presentation's entry point is <code>html/all.html</code>.
+
+<pre><code>
+rake all
+</code></pre>
+
+h2. Contributions
+
+All errata is welcome, especially in the form of patches.

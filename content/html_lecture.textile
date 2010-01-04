@@ -1,0 +1,317 @@
+h1. HTML: the HyperText Markup Language
+
+h1. HTML is a Markup Language
+
+* Semantic annotations for your data
+* NOT for presentation
+* NOT a programming language
+
+h1. This is HTML
+
+:code code/html/sample.html[lang=html]
+
+h1. HTML Anatomy: Tags
+
+* Opening tag:
+
+:inlinecode[lang=html]
+<p>
+:endinlinecode
+
+* Closing tag:
+
+:inlinecode[lang=html]
+</p>
+:endinlinecode
+
+* Self-closing tag:
+
+:inlinecode[lang=html]
+<img />
+:endinlinecode
+
+h1. HTML Anatomy: Elements
+
+* Start with an opening tag, end with a closing tag *with the same name*.
+
+:inlinecode[lang=html]
+<p>This element is a paragraph of text</p>
+:endinlinecode
+
+* A self-closing tag is an element.
+
+h1. HTML Elements Must be Nested Correctly
+
+<table>
+<tr><th>Good</th><th>Bad</th></tr>
+<tr><td>
+:inlinecode[lang=html]
+<p>This is a paragraph <em>with emphasized text</em></p>
+:endinlinecode
+</td><td>
+
+:inlinecode[lang=html]
+<p>This is a paragraph <em>with emphasized text</p></em>
+:endinlinecode
+
+</td></tr>
+</table>
+
+h1. HTML Anatomy: Attributes
+
+:inlinecode[lang=html]
+<a href="http://www.google.com">Google</a>
+<video src="funny.ogg" autoplay="autoplay" />
+:endinlinecode
+
+* Attributes go in the opening tag
+* Every attribute must have a value
+* No spaces before or after @=@
+* Values must be wrapped in quotes (@"@)
+
+h1. HTML Anatomy: Entities
+
+* How do you write @<p>@ in a paragraph?
+
+:inlinecode[lang=html]
+<p>This is a paragraph about &lt;p;&gt;</p>
+:endinlinecode
+
+* Entities start with @&@ and end with @;@
+
+* Popular examples:
+
+| &    | @&amp;@ | &copy;    | @&quot;@  |
+| <    | @&lt;@  | ASCII 127 | @&#7F;@   |
+| >    | @&gt;@  | &trade;   | @&trade;@ |
+
+h1. HTML Anatomy: the Document
+
+:code code/html/document.html[lang=html]
+
+* @<html>@ wraps everything. @<head>@ always goes before @<body>@.
+* What's the ugly thing at the top?
+
+h1. HTML Anatomy: the Document Type Declaration
+
+* Old documents (pre-1998) have no doctype. Old documents don't follow new standards.
+
+* HTML 5 doctype (all you need to know):
+
+:inlinecode[lang=html]
+<!DOCTYPE html>
+:endinlinecode
+
+* Latest fad before HTML5:
+
+:inlinecode[lang=html]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+:endinlinecode
+
+* Old documents with a doctype:
+
+:inlinecode[lang=html]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+:endinlinecode
+
+h1. HTML Anatomy: Wrap-Up
+
+# An HTML page holds a HTML document.
+# A HTML document is a hierarchy of HTML elements.
+# HTML elements are delimited by HTML tags.
+# HTML elements can have attributes.
+# Special characters are encoded using HTML entities.
+# The HTML 5 doctype shows the document obeys standards.
+
+h1. HTML: Paragraphs
+
+:inlinecode[lang=html]
+<p>This is a paragraph of text. It covers an idea.</p>
+
+<p>This is another paragraph of text. It's a bit longer,
+so I had to break it up on three lines. That's OK, because
+HTML doesn't care about line breaks. </p>
+:endinlinecode
+
+Always wrap text in some element. @<p>@ is a good default if you don't know where your text belongs.
+
+h1. HTML: Headings
+
+:inlinecode[lang=html]
+<h1>New York Times</h1>
+
+<h2>Technology</h2>
+
+<h3>HTML 5 Standard Slated for 2012</h3>
+
+<h3>Firefox 3.6 Released Today</h3>
+
+<h2>Sports</h2>
+:endinlinecode
+
+Choose heading numbers to reflect semantics, not presentation.
+
+Example: @<h3>@ should never follow @<h1>@.
+
+h1. HTML: Emphasis
+
+:inlinecode[lang=html]
+<p><em>Mary</em> had a little lamb.</p>
+
+<p>Mary <em>had</em> a little lamb.</p>
+
+<p>Mary had a <em>little</em> lamb.</p>
+:endinlinecode
+
+| Semantic (Good) | Presentation (Bad) |
+| @<em>@ | @<i>@ |
+| @<strong>@ | @<b>@ |
+ 
+h1. HTML: Links
+
+:inlinecode[lang=html]
+<a href="http://www.twitter.com/victor_costan">Follow me on Twitter</a>
+
+<a href="/logout.php">Log out</a>
+
+<a href="chapter1.html">Chapter 1 of the story</a>
+:endinlinecode
+
+* Links are the hyper in _hyper_-text.
+* @href@ means *hyper-reference*
+
+h1. HTML: Lists I
+
+<table>
+<tr>
+  <th>Unordered</th>  
+  <th>Ordered</th>
+</tr>
+<tr><td>
+:inlinecode[lang=html]
+<p>This is my shopping list:</p>
+<ul>
+  <li>eggs</li>
+  <li>bread</li>
+  <li>milk</li>
+</ul>
+:endinlinecode
+</td><td>
+:inlinecode[lang=html]
+<p>Top 3 programming languages:</p>
+<ol>
+  <li>Java</li>
+  <li>C</li>
+  <li>PHP</li>
+</ol>
+:endinlinecode
+</td></tr>
+</table>
+
+* @<ol>@, @<ul>@: Ordered List, Unordered List
+* @<li>@: List Item
+
+h1. HTML: Lists II
+
+:inlinecode[lang=html]
+<dl>
+  <dt>HTML</dt>
+  <dd>the Web's markup language</dd>
+  <dt>JavaScript</dt>
+  <dd>the Web's programming language</dd>
+</dl>
+:endinlinecode
+
+* @<dl>@: Definition List
+* @<dt>@: Definition Term
+* @<dd>@: Definition Description
+
+h1. HTML: Images
+
+:inlinecode[lang=html]
+<img src="images/big_doll.png"
+     alt="Short description for visitors who can't see images" />
+:endinlinecode
+
+* The @<img>@ tag should be empty.
+* Common mistake: using @href@ instead of @src@.
+* The @alt@ attribute is *mandatory*.
+* The @width@ and @height@ attributes are *deprecated*. Use CSS instead.
+
+h1. HTML: Audio and Video
+
+:inlinecode[lang=html]
+<video src="ads/annoying.ogg" autoplay="autoplay"
+       controls="controls" loop="loop">
+Display this text if the browser doesn't support video.
+</video>
+
+<audio src="boom_headshot.ogg" loop="loop" />
+:endinlinecode
+
+* Think twice if using @autoplay@ with anything that makes sound.
+* @controls@ is browser-specific. Consider building your own controls using JavaScript.
+* No universally supported codecs yet. Firefox plays Ogg audio & video.
+
+h1. HTML: Tables I
+
+:code code/html/tables1.html[lang=html]
+
+h1. HTML: Tables I Rendering
+
+:include code/html/tables1.html
+
+h1. HTML: Tables II
+
+:code code/html/tables2.html[lang=html]
+
+h1. HTML: Tables II Rendering
+
+:include code/html/tables2.html
+
+h1. HTML: Bad Use of Tables
+
+:inlinecode[lang=html]
+<table>
+  <tr>
+    <td colspan="2">Header</td>
+  </tr>
+  <tr>
+    <td>
+      Navigation
+    </td>
+    <td>
+      Main
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">Footer</td>  
+  </tr>
+</table>
+:endinlinecode
+
+Don't use tables for layout. HTML is for markup, CSS is for presentation.
+
+h1. HTML: Forms I
+
+:code code/html/forms1.html[lang=html]
+
+h1. HTML: Forms I Rendering
+
+:include code/html/forms1.html
+
+h1. HTML: Forms I Submission
+
+:code code/html/forms1.http
+
+| Action | @/search@  |
+| @q@    | @unicorns@ |
+| @lang@ | @en@       |
+
+h1. HTML: Forms II
+
+:code code/html/forms2.html[lang=html]
+
+h1. HTML: Forms II Rendering
+
+:include code/html/forms2.html

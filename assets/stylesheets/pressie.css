@@ -81,9 +81,6 @@ div.slide h1.exercise {
 
 div#slide0,  div.title {
     height: 100%;
-    background-image: url(ruby.png);
-    background-repeat: no-repeat;
-    background-position: bottom right;
 }
 
 div#slide0 h1, div.title h1 {

@@ -1,1 +1,15 @@
 h1. CSS Exercise
+
+Scaffold code available at:
+
+*{font-size: 3em; }http://bit.ly/5ORxcN*
+
+http://github.com/costan/html_css_js_slides/ raw/master/exercises/css_start.html
+
+h1. CSS Exercise: Solution
+
+Solution available at:
+
+*{font-size: 3em; }http://bit.ly/84UNOb*
+
+http://github.com/costan/html_css_js_slides/ raw/master/exercises/css_finish.html

@@ -1,1 +1,7 @@
 h1. CSS Demo
+
+Demo code available at:
+
+*{font-size: 3em; }http://bit.ly/4AJXqz*
+
+http://github.com/costan/html_css_js_slides/ raw/master/exercises/css_demo.html

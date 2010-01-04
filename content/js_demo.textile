@@ -1,1 +1,7 @@
-h1. JavaScript Demo
+h1. JavaScript Demo / Exercise
+
+Demo code available at:
+
+*{font-size: 3em; }http://bit.ly/5XoTyi*
+
+http://github.com/costan/html_css_js_slides/ raw/master/exercises/js_start.html

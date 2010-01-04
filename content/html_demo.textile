@@ -1,1 +1,7 @@
 h1. HTML Demo
+
+Demo code available at:
+
+*{font-size: 3em; }http://bit.ly/6Gantb*
+
+http://github.com/costan/html_css_js_slides/ raw/master/exercises/html_start.html

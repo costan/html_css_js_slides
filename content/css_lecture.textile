@@ -467,7 +467,7 @@ h1. CSS Typography: The Em Box
 !{width:50%;}images/the_em_box.svg!
 </div>
 
-* @font-face@ sets the size of the em box.
+* @font-size@ sets the size of the em box.
 * @1 em@ is the size of the current font's em box, not the size of capital M.
 
 h1. CSS Typography: Important Lines

@@ -2,9 +2,9 @@ h1. HTML Exercise
 
 Scaffold code available at:
 
-*{font-size: 3em; }http://bit.ly/6Gantb*
+*{font-size: 3em; }http://bit.ly/813OjF*
 
-http://github.com/costan/html_css_js_slides/ raw/master/exercises/html_start.html
+http://github.com/costan/html_css_js_slides/ raw/master/exercises/html_partial.html
 
 h1. HTML Exercise: Solution
 

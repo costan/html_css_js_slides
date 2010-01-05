@@ -34,7 +34,7 @@
         padding-bottom: 5px;
       }
     </style>
-		
+    
     <div class="zippy expanded">
       <h2>Gadgets</h2>
       <ul>
@@ -59,10 +59,29 @@
         <li>Nylon bag</li>
       </ul>
     </div>
-		
+    
     <script type="text/javascript">
-    	/* Write your JavaScript here. */
-						
+      /* Write your JavaScript here. */
+      
+      var elements = document.querySelectorAll('.zippy h2');
+      var elementClicked = function(event) {
+        var h2Clicked = event.target;
+        var divClicked = h2Clicked.parentNode;
+        var className = divClicked.className;
+        
+        if (className.indexOf('expanded') == -1) {
+          divClicked.className = 'zippy expanded';
+        }
+        else {
+          divClicked.className = 'zippy collapsed';
+        }
+        /* console.log(divClicked.className); */
+      }
+      
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        element.addEventListener('click', elementClicked, false);
+      }
     </script>
   </body>
 </html>

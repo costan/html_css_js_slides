@@ -1,34 +1,68 @@
-ACME INC. - CORPORATE HOME
---------------------------
-
-Navigation
-----------
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acme Inc - Corporate Home</title>
+  </head>
+  <body>
+    <h1>Acme Inc. - Corporate Home</h1>
+    <h2>Navigation</h2>
+		
 * Home
 * Company History
 * Parteners
 * Departaments
    o CEO
-	 o Marketing
-	 o Product Management
-	 o Manufacturing
-
-About Us
---------
-
-Acme Inc. is the world-wide leader in design, production, and manufacturing of
-Widgets and Gadgets.
-
-
-Tell Us About Yourself
-----------------------
-
-Name: _______________________
-E-mail: _____________________
-Gender: [ ] male  [ ] female
-Comments:
-_____________________________
-_____________________________
-_____________________________
-_____________________________
-_____________________________
+   o Marketing
+   o Product Management
+   o Manufacturing
+    
+    <h2>About Us</h2>
+    <p>
+      Acme Inc. is the world-wide leader in design, production, and
+      manufacturing of Widgets and Gadgets.
+    </p>
+    
+    <h2>Tell Us About Yourself</h2>
+    <form>
+      <dl>
+        <dt>
+          <label for="name_field">
+            Name:
+          </label>
+        </dt>
+        <dd>
+          <input name="name" type="text" id="name_field"/>
+        </dd>
+        <dt>
+          <label for="email_field">
+            E-mail:
+          </label>
+        </dt>
+        <dd>
+          <input name="email" type="text" id="email_field"/>
+        </dd>
+        <dt>
+          Gender:
+        </dt>
+        <dd>
+          <input name="gender" type="radio" value="male" id="male_button" />
+          <label for="male_button">
+            male
+          </label>
+          <input name="gender" type="radio" value="female" />
+          <label for="female_button">
+            female
+          </label>
+        </dd>
+        <dt>
+          <label for="comments_field">Comments:</label>
+        </dt>
+        <dd>
+          <textarea name="comments" id="comments_field">
+          </textarea>
+        </dd>
+      </dl>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

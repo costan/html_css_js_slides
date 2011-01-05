@@ -195,9 +195,46 @@ a:active { color: black; }
 :endinlinecode
 
 What does this do?
-*(incremental) Unvisited links are blue. Visited links are gray.
-*(incremental) When the user's mouse hovers over a link, it turns red.
-*(incremental) When the user clicks on a link, it becomes black.
+
+h1. CSS Selectors: Pseudo-Class Example
+
+:inlinecode[lang=css]
+a:link { color: blue; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: black; }
+:endinlinecode
+
+What does this do?
+* Unvisited links are blue. Visited links are gray.
+
+h1. CSS Selectors: Pseudo-Class Example
+
+:inlinecode[lang=css]
+a:link { color: blue; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: black; }
+:endinlinecode
+
+What does this do?
+* Unvisited links are blue. Visited links are gray.
+* When the user's mouse hovers over a link, it turns red.
+
+h1. CSS Selectors: Pseudo-Class Example
+
+:inlinecode[lang=css]
+a:link { color: blue; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: black; }
+:endinlinecode
+
+What does this do?
+* Unvisited links are blue. Visited links are gray.
+* When the user's mouse hovers over a link, it turns red.
+* When the user clicks on a link, it becomes black.
+
 
 h1. CSS Selectors: Advanced Pseudo-Classes
 
@@ -216,12 +253,16 @@ h1. CSS Selectors: the Selectoracle
 ul#master-index > li:nth-child(even).small p.highlighted.twisted.legal a:hover
 :endinlinecode
 
-<div class="incremental">
+h1. CSS Selectors: the Selectoracle
+
+:inlinecode[lang=css]
+ul#master-index > li:nth-child(even).small p.highlighted.twisted.legal a:hover
+:endinlinecode
+
 A hovered link inside
 a paragraph (@<p>@) with classes @highlighted@ and @twisted@ inside
 a list item (@<li>@) with class @small@ which is an even child of
 an unordered list (@<ul>@) with @id="master-index"@ 
-</div>
 
 h1. The Cascade: The C in CSS
 
@@ -233,7 +274,17 @@ p { color: blue; }
 <p>What color is this paragraph?</p>
 :endinlinecode
 
-*(incremental) The paragraph is blue, so the last declaration wins.
+h1. The Cascade: The C in CSS
+
+:inlinecode[lang=css]
+p { color: red; }
+p { color: blue; }
+:endinlinecode
+:inlinecode[lang=html]
+<p>What color is this paragraph?</p>
+:endinlinecode
+
+* The paragraph is blue, so the last declaration wins.
 
 :inlinecode[lang=css]
 p.highlight { color: red; }
@@ -243,7 +294,27 @@ p { color: blue; }
 <p class="highlight">What color is this paragraph?</p>
 :endinlinecode
 
-*(incremental) The paragraph is red, because the first declaration is more specific.
+h1. The Cascade: The C in CSS
+
+:inlinecode[lang=css]
+p { color: red; }
+p { color: blue; }
+:endinlinecode
+:inlinecode[lang=html]
+<p>What color is this paragraph?</p>
+:endinlinecode
+
+* The paragraph is blue, so the last declaration wins.
+
+:inlinecode[lang=css]
+p.highlight { color: red; }
+p { color: blue; }
+:endinlinecode
+:inlinecode[lang=html]
+<p class="highlight">What color is this paragraph?</p>
+:endinlinecode
+
+* The paragraph is red, because the first declaration is more specific.
 
 h1. The Cascade: How It Works
 
@@ -270,19 +341,55 @@ h1. The Cascade: Specificity Examples
 p#header { color: red; }
 :endinlinecode
 
-*(incremental) Specificity: 1, 0, 1
+h1. The Cascade: Specificity Examples
+
+:inlinecode[lang=css]
+p#header { color: red; }
+:endinlinecode
+
+* Specificity: 1, 0, 1
 
 :inlinecode[lang=css]
 p li.highlight { color: red; }
 :endinlinecode
 
-*(incremental) Specificity: 0, 1, 2
+h1. The Cascade: Specificity Examples
+
+:inlinecode[lang=css]
+p#header { color: red; }
+:endinlinecode
+
+* Specificity: 1, 0, 1
+
+:inlinecode[lang=css]
+p li.highlight { color: red; }
+:endinlinecode
+
+* Specificity: 0, 1, 2
 
 :inlinecode[lang=css]
 #header p.small a:hover { color: red; }
 :endinlinecode
 
-*(incremental) Specificity: 1, 2, 2
+h1. The Cascade: Specificity Examples
+
+:inlinecode[lang=css]
+p#header { color: red; }
+:endinlinecode
+
+* Specificity: 1, 0, 1
+
+:inlinecode[lang=css]
+p li.highlight { color: red; }
+:endinlinecode
+
+* Specificity: 0, 1, 2
+
+:inlinecode[lang=css]
+#header p.small a:hover { color: red; }
+:endinlinecode
+
+* Specificity: 1, 2, 2
 
 h1. The Cascade: Ordering Specificities
 

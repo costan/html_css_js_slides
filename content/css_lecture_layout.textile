@@ -152,6 +152,10 @@ h1. CSS Layout: Positioning
 | @absolute@ | no      | document coordinate space     |
 | @fixed@    | no      | screen coordinate space       |
 
+h1. CSS Layout: Positioning Demo
+
+p{ font-size: 2em; }. "Learn CSS Positioning in Ten Steps":http://www.barelyfitz.com/screencast/html-training/css/positioning/
+
 h1. CSS Layout: Floats
 
 :inlinecode[lang=css]
